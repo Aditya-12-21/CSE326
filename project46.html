@@ -1,0 +1,324 @@
+<html>
+ <head>
+  <title>
+   Career Guidance for 12th Students
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            padding: 20px;
+        }
+        .course, .college {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .course-item, .college-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .course-item:hover, .college-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .course-item img, .college-item img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .course-item h3, .college-item h3 {
+            margin-top: 10px;
+        }
+        @keyframes textAnimation {
+            0% {
+                color: white;
+                transform: scale(1);
+            }
+            50% {
+                color: black;
+                transform: scale(1.1);
+            }
+            100% {
+                color: white;
+                transform: scale(1);
+            }
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+        .typing-animation {
+            overflow: hidden;
+            border-right: .15em solid white;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+  </style>
+ </head>
+ <body>
+  <header>
+   <h1 class="typing-animation">
+    Career Guidance for 12th Students
+   </h1>
+  </header>
+  <nav>
+   <a href="#courses">
+    Courses
+   </a>
+   <a href="#colleges">
+    Colleges
+   </a>
+  </nav>
+  <div class="container" id="courses">
+   <h2>
+    Courses
+   </h2>
+   <div class="course">
+    <div class="course-item">
+     <img alt="Image of a computer science course with a laptop and code on the screen" height="200" onclick="openModal('Computer Science', 'Computer Science involves the study of algorithms, data structures, and software development. It is a field that combines theoretical knowledge with practical skills to solve complex problems using technology.')" src="https://storage.googleapis.com/a1aa/image/xW0tHkewCjwlAiK3Xuar5yR6guOQIOJtwNc4jfdo9dGydfXnA.jpg" width="300"/>
+     <h3>
+      Computer Science
+     </h3>
+     <p>
+      Learn about algorithms, data structures, and software development.
+     </p>
+    </div>
+    <div class="course-item">
+     <img alt="Image of a medical course with a stethoscope and medical books" height="200" onclick="openModal('Medicine', 'Medicine is the science and practice of diagnosing, treating, and preventing diseases. It involves a deep understanding of human anatomy, physiology, and medical practices.')" src="https://storage.googleapis.com/a1aa/image/olgGAwOrVeUDEqA1IDcQLl0qMGxaqbJy3IiTwtHKGXV8ufrTA.jpg" width="300"/>
+     <h3>
+      Medicine
+     </h3>
+     <p>
+      Study human anatomy, physiology, and medical practices.
+     </p>
+    </div>
+    <div class="course-item">
+     <img alt="Image of an engineering course with blueprints and tools" height="200" onclick="openModal('Engineering', 'Engineering is the application of science and mathematics to solve real-world problems. It encompasses various fields such as civil, mechanical, electrical, and more.')" src="https://storage.googleapis.com/a1aa/image/bvxJ7LLj6gLpIJPR8sOmuI6MTj2guDtSokTaM6OgeOw8ufrTA.jpg" width="300"/>
+     <h3>
+      Engineering
+     </h3>
+     <p>
+      Explore civil, mechanical, electrical, and other engineering fields.
+     </p>
+    </div>
+    <div class="course-item">
+     <img alt="Image of a business administration course with charts and graphs" height="200" onclick="openModal('Business Administration', 'Business Administration involves the management of a business, including finance, marketing, and operations. It focuses on strategic planning and organizational behavior.')" src="https://storage.googleapis.com/a1aa/image/rFao1AToM6IfAabyGHz607bj7c558w4uWIE1QwuseMfo7evOB.jpg" width="300"/>
+     <h3>
+      Business Administration
+     </h3>
+     <p>
+      Learn about management, finance, and marketing strategies.
+     </p>
+    </div>
+    <div class="course-item">
+     <img alt="Image of a law course with legal books and a gavel" height="200" onclick="openModal('Law', 'Law is the study of legal systems, case laws, and legal practices. It involves understanding the rules and regulations that govern society and how they are applied.')" src="https://storage.googleapis.com/a1aa/image/oR4ZR9Q1VUafSS6pxQ2Yjch6lPfTSo91h3IPkCO99TnxdfXnA.jpg" width="300"/>
+     <h3>
+      Law
+     </h3>
+     <p>
+      Study legal systems, case laws, and legal practices.
+     </p>
+    </div>
+    <div class="course-item">
+     <img alt="Image of an arts course with paintbrushes and a canvas" height="200" onclick="openModal('Fine Arts', 'Fine Arts involves the study and creation of visual art forms such as painting, sculpture, and drawing. It emphasizes creativity and artistic expression.')" src="https://storage.googleapis.com/a1aa/image/xZa3RsXccArAIR2f3ApYqaffTo1rpGRTFidT0qTkwlxd7evOB.jpg" width="300"/>
+     <h3>
+      Fine Arts
+     </h3>
+     <p>
+      Explore painting, sculpture, and other visual arts.
+     </p>
+    </div>
+   </div>
+  </div>
+  <div class="container" id="colleges">
+   <h2>
+    Colleges
+   </h2>
+   <div class="college">
+    <div class="college-item">
+     <img alt="Image of Indian Institute of Technology (IIT) Bombay campus with modern buildings" height="200" src="https://storage.googleapis.com/a1aa/image/2lu7iZJ5uTLENxyedifqoNugjy9cAqP3YxnjTfDAFSKvfAwOB.jpg" width="300"/>
+     <h3>
+      Indian Institute of Technology (IIT) Bombay
+     </h3>
+     <p>
+      Located in Mumbai, IIT Bombay is one of the premier engineering institutions in India.
+     </p>
+    </div>
+    <div class="college-item">
+     <img alt="Image of Indian Institute of Technology (IIT) Delhi campus with modern architecture" height="200" src="https://storage.googleapis.com/a1aa/image/18GBCELORPJpINudVNqYk0fUuAsGaUlFNYPgwrKKpHf2PAsTA.jpg" width="300"/>
+     <h3>
+      Indian Institute of Technology (IIT) Delhi
+     </h3>
+     <p>
+      Located in New Delhi, IIT Delhi is known for its strong engineering and technology programs.
+     </p>
+    </div>
+    <div class="college-item">
+     <img alt="Image of Indian Institute of Technology (IIT) Madras campus with lush greenery" height="200" src="https://storage.googleapis.com/a1aa/image/kD63Yu9hxqIFMNmf9spLLYNRWwUcERYORgt3J8Jx9LAePAsTA.jpg" width="300"/>
+     <h3>
+      Indian Institute of Technology (IIT) Madras
+     </h3>
+     <p>
+      Located in Chennai, IIT Madras is renowned for its research and innovation in technology.
+     </p>
+    </div>
+    <div class="college-item">
+     <img alt="Image of Indian Institute of Science (IISc) Bangalore campus with historic architecture" height="200" src="https://storage.googleapis.com/a1aa/image/Opm29VtNB8L4Ahc6wRyOyK4fpBFkjwyOwlfWyYOLK8X5PAsTA.jpg" width="300"/>
+     <h3>
+      Indian Institute of Science (IISc) Bangalore
+     </h3>
+     <p>
+      Located in Bangalore, IISc is one of the leading research institutions in India.
+     </p>
+    </div>
+    <div class="college-item">
+     <img alt="Image of All India Institute of Medical Sciences (AIIMS) Delhi campus with modern buildings" height="200" src="https://storage.googleapis.com/a1aa/image/njInfwpkqc3PTaM5wXzdu9YwFoHTHp1aApr4wmCqBnc9HA2JA.jpg" width="300"/>
+     <h3>
+      All India Institute of Medical Sciences (AIIMS) Delhi
+     </h3>
+     <p>
+      Located in New Delhi, AIIMS is the top medical college in India.
+     </p>
+    </div>
+    <div class="college-item">
+     <img alt="Image of University of Delhi campus with historic buildings and gardens" height="200" src="https://storage.googleapis.com/a1aa/image/Z2PkUPGe8oWfUEMbugREUIswQPkN0AemVaPoK4rrrse2fBgdC.jpg" width="300"/>
+     <h3>
+      University of Delhi
+     </h3>
+     <p>
+      Located in New Delhi, the University of Delhi is known for its diverse academic programs.
+     </p>
+    </div>
+    <div class="college-item">
+     <img alt="Image of Birla Institute of Technology and Science (BITS) Pilani campus with modern buildings" height="200" src="https://storage.googleapis.com/a1aa/image/0MXqbpW9GfXwXylrbqU8pZPPC2WZTrlrQVhbCepiggGAcfXnA.jpg" width="300"/>
+     <h3>
+      Birla Institute of Technology and Science (BITS) Pilani
+     </h3>
+     <p>
+      Located in Pilani, Rajasthan, BITS Pilani is one of the top private engineering colleges in India.
+     </p>
+    </div>
+    <div class="college-item">
+     <img alt="Image of National Institute of Technology (NIT) Trichy campus with modern buildings" height="200" src="https://storage.googleapis.com/a1aa/image/DsJ2n1WqNNbLCdOlTCfzGfPoJbT9dUkjC8wFE56RqTcFcfXnA.jpg" width="300"/>
+     <h3>
+      National Institute of Technology (NIT) Trichy
+     </h3>
+     <p>
+      Located in Tiruchirappalli, Tamil Nadu, NIT Trichy is one of the top NITs in India.
+     </p>
+    </div>
+   </div>
+  <center>
+  <footer>
+    <p>&copy; 2024 Career Guidance. All rights reserved.</p>
+  </footer>
+  </center>
+  </div>
+  <div class="modal" id="myModal">
+   <div class="modal-content">
+    <span class="close" onclick="closeModal()">
+     ×
+    </span>
+    <h2 id="modalTitle">
+    </h2>
+    <p id="modalDescription">
+    </p>
+   </div>
+  </div>
+  <script>
+   function openModal(title, description) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = "none";
+            }
+        }
+  </script>
+ </body>
+</html>
